@@ -1,0 +1,83 @@
+1)
+for i in range(1, 11):
+    print(i)
+-------------------------------------------------------------------------------------
+2)
+soma = 0
+for i in range(1, 101):
+    soma += i
+
+print("A soma dos números de 1 a 100 é:", soma)
+------------------------------------------------------------------------------------
+3)
+numero = int(input("Digite um número para ver a tabuada: "))
+
+print(f"Tabuada do {numero}:")
+for i in range(1, 11):
+    resultado = numero * i
+    print(f"{numero} x {i} = {resultado}")
+-------------------------------------------------------------------------------------
+4)
+numeros = input("Digite uma lista de números separados por espaço: ").split()
+numeros = [int(numero) for numero in numeros]
+
+pares = 0
+impares = 0
+
+for numero in numeros:
+    if numero % 2 == 0:
+        pares += 1
+    else:
+        impares += 1
+
+print(f"Quantidade de números pares: {pares}")
+print(f"Quantidade de números ímpares: {impares}")
+--------------------------------------------------------------------------------------
+5)
+numeros = input("Digite uma lista de números separados por espaço: ").split()
+numeros = [int(numero) for numero in numeros]
+
+maior_valor = numeros[0]  # Inicializa com o primeiro valor da lista
+
+for numero in numeros:
+    if numero > maior_valor:
+        maior_valor = numero
+
+print(f"O maior valor na lista é: {maior_valor}")
+-------------------------------------------------------------------------------------------
+6)
+n = int(input("Digite o número de termos da sequência de Fibonacci: "))
+
+fibonacci = [0, 1]  # Inicializa a sequência com os dois primeiros números
+
+for i in range(2, n):
+    proximo_numero = fibonacci[i-1] + fibonacci[i-2]
+    fibonacci.append(proximo_numero)
+
+print(f"Os primeiros {n} números da sequência de Fibonacci são:")
+for numero in fibonacci:
+    print(numero, end=" ")
+--------------------------------------------------------------------------------------------
+7)
+numero = int(input("Digite um número para calcular o fatorial: "))
+fatorial = 1
+
+for i in range(1, numero + 1):
+    fatorial *= i
+
+print(f"O fatorial de {numero} é: {fatorial}")
+--------------------------------------------------------------------------------------------
+8)
+def eh_primo(numero):
+    if numero <= 1:
+        return False
+    for i in range(2, int(numero ** 0.5) + 1):
+        if numero % i == 0:
+            return False
+    return True
+
+print("Números primos entre 1 e 50:")
+for num in range(1, 51):
+    if eh_primo(num):
+        print(num, end=" ")
+-----------------------------------------------------------------------------------------------
